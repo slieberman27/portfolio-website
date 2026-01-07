@@ -1,10 +1,168 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Seth Lieberman's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#12141b;
+      --text:#f4f6ff;
+      --muted:#b7bdd1;
+      --stroke:rgba(255,255,255,.08);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 50% 0%, rgba(120,80,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 20% 30%, rgba(0,200,255,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+    }
+
+    .wrap{
+      width:min(980px, 100%);
+      text-align:center;
+    }
+
+    header{
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(26px, 4vw, 42px);
+      letter-spacing:.5px;
+    }
+
+    .tagline{
+      margin:8px auto 0;
+      color:var(--muted);
+      max-width:60ch;
+      line-height:1.35;
+      font-size:clamp(14px, 2vw, 16px);
+    }
+
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+
+    @media (min-width: 860px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+        gap:18px;
+      }
+    }
+
+    a.card{
+      text-decoration:none;
+      color:inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:block;
+      transform: translateY(0);
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+    }
+
+    a.card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.18);
+      filter: brightness(1.03);
+    }
+
+    .media{
+      width:100%;
+      aspect-ratio: 16 / 10;
+      background:#0f1117;
+      display:block;
+      object-fit:cover;
+    }
+
+    .caption{
+      padding:14px 16px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .label{
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .hint{
+      font-size:12px;
+      color:var(--muted);
+      opacity:.9;
+      white-space:nowrap;
+    }
+
+    footer{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* Optional: accessibility focus ring */
+    a.card:focus-visible{
+      outline:3px solid rgba(120,80,255,.55);
+      outline-offset:3px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Welcome to Seth Lieberman's Portfolio</h1>
-    <p>This is a placeholder for Seth Lieberman's portfolio website.</p>
+  <main class="wrap">
+    <header>
+      <h1>Musical Theatre + Sports</h1>
+      <p class="tagline">Two worlds. Tap in.</p>
+    </header>
+
+    <section class="grid" aria-label="Homepage navigation">
+      <!-- CARD 1: Show Photo -> Page 2 -->
+      <a class="card" href="theater.html" aria-label="Go to Theater and Music page">
+        <!-- Replace src with your real show photo -->
+        <img class="media" src="images/show-photo.jpg" alt="Photo from a performance" />
+        <div class="caption">
+          <div class="label">Theatre</div>
+          <div class="hint">Click →</div>
+        </div>
+      </a>
+
+      <!-- CARD 2: NFL Article Screenshot -> Page 3 -->
+      <a class="card" href="sports.html" aria-label="Go to Sports Articles and Management page">
+        <!-- Replace src with your real article screenshot -->
+        <img class="media" src="images/nfl-article.jpg" alt="Screenshot of an NFL article" />
+        <div class="caption">
+          <div class="label">Sports</div>
+          <div class="hint">Click →</div>
+        </div>
+      </a>
+    </section>
+
+    <footer>
+      <span>Keep it clean. Keep it visual.</span>
+    </footer>
+  </main>
 </body>
 </html>
