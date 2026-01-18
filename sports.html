@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports | Seth Lieberman's Portfolio</title>
+  <style>
+    :root{
+      --bg:#fcecc7;
+      --card:#12141b;
+      --text:#001367;
+      --muted:#8c9edc;
+      --stroke:rgba(255,255,255,.08);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+    }
+
+    .wrap{
+      width:min(980px, 100%);
+      text-align:center;
+    }
+
+    header{ margin-bottom:16px; }
+
+    h1{
+      margin:0;
+      font-size:clamp(26px, 4vw, 42px);
+      letter-spacing:.5px;
+    }
+
+    .tagline{
+      margin:8px auto 0;
+      color:var(--muted);
+      max-width:60ch;
+      line-height:1.35;
+      font-size:clamp(14px, 2vw, 16px);
+    }
+
+    .topnav{
+      margin:14px auto 0;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      text-decoration:none;
+      color:inherit;
+      font-size:13px;
+      font-weight:650;
+      transition: transform .18s ease, filter .18s ease, border-color .18s ease;
+    }
+    .pill:hover{ transform: translateY(-2px); filter: brightness(1.03); border-color: rgba(255,255,255,.22); }
+    .pill:focus-visible{ outline:3px solid rgba(120,80,255,.55); outline-offset:3px; }
+
+    .section{
+      margin-top:18px;
+      text-align:left;
+    }
+
+    .section h2{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    @media (min-width: 860px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+        gap:18px;
+      }
+    }
+
+    a.card, .card{
+      text-decoration:none;
+      color:inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:block;
+      transform: translateY(0);
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+    }
+
+    a.card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.18);
+      filter: brightness(1.03);
+    }
+
+    .media{
+      width:100%;
+      aspect-ratio: 16 / 10;
+      background:#0f1117;
+      display:block;
+      object-fit:cover;
+    }
+
+    .content{
+      padding:14px 16px 16px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .left{ min-width:0; }
+
+    .title{
+      margin:0;
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:.2px;
+    }
+
+    .meta{
+      margin:6px 0 0;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    .chip{
+      font-size:11px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      padding:6px 10px;
+      white-space:nowrap;
+      margin-top:2px;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .item{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding:12px 12px;
+    }
+
+    .itemTop{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .itemName{
+      font-weight:800;
+      font-size:13px;
+      margin:0;
+    }
+
+    .itemDetails{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+
+    footer{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+
+    a.card:focus-visible{
+      outline:3px solid rgba(120,80,255,.55);
+      outline-offset:3px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Sports</h1>
+      <p class="tagline">Articles • Screenshots • Team Management</p>
+
+      <nav class="topnav" aria-label="Page navigation">
+        <a class="pill" href="index.html" aria-label="Back to homepage">← Home</a>
+        <a class="pill" href="theater.html" aria-label="Go to theatre page">Theatre →</a>
+      </nav>
+    </header>
+
+    <!-- ARTICLES -->
+    <section class="section" aria-label="Football articles">
+      <h2>Football Writing</h2>
+
+      <div class="grid">
+        <!-- Make these link to real articles when you have URLs -->
+        <a class="card" href="#" target="_blank" rel="noopener" aria-label="Open article 1">
+          <img class="media" src="images/nfl-article-1.jpg" alt="Screenshot of football article 1" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Article Title]</p>
+              <p class="meta">Short 1-line description • [Site/Publication]</p>
+            </div>
+            <div class="chip">Read</div>
+          </div>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noopener" aria-label="Open article 2">
+          <img class="media" src="images/nfl-article-2.jpg" alt="Screenshot of football article 2" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Article Title]</p>
+              <p class="meta">Short 1-line description • [Date]</p>
+            </div>
+            <div class="chip">Read</div>
+          </div>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noopener" aria-label="Open article 3">
+          <img class="media" src="images/nfl-article-3.jpg" alt="Screenshot of football article 3" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Article Title]</p>
+              <p class="meta">Short 1-line description</p>
+            </div>
+            <div class="chip">Read</div>
+          </div>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noopener" aria-label="Open article 4">
+          <img class="media" src="images/nfl-article-4.jpg" alt="Screenshot of football article 4" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Article Title]</p>
+              <p class="meta">Short 1-line description</p>
+            </div>
+            <div class="chip">Read</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- MANAGEMENT / GAME PHOTOS -->
+    <section class="section" aria-label="Sports management">
+      <h2>Management / Sim</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img class="media" src="images/manager-1.jpg" alt="Screenshot of basketball management work 1" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Basketball Manager]</p>
+              <p class="meta">Short 1-line caption</p>
+            </div>
+            <div class="chip">Photo</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="media" src="images/manager-2.jpg" alt="Screenshot of basketball management work 2" />
+          <div class="content">
+            <div class="left">
+              <p class="title">[Team Build / Strategy]</p>
+              <p class="meta">Short 1-line caption</p>
+            </div>
+            <div class="chip">Photo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVOLVEMENT LIST -->
+    <section class="section" aria-label="Sports involvement">
+      <h2>Involvement</h2>
+      <ul class="list">
+        <li class="item">
+          <div class="itemTop">
+            <p class="itemName">Football Writing</p>
+            <span class="chip">Articles</span>
+          </div>
+          <p class="itemDetails">Topics: [NFL / analysis / previews / etc.]</p>
+        </li>
+
+        <li class="item">
+          <div class="itemTop">
+            <p class="itemName">Basketball Management</p>
+            <span class="chip">Sim</span>
+          </div>
+          <p class="itemDetails">Tools/Games: [NBA 2K / spreadsheet / etc.]</p>
+        </li>
+
+        <li class="item">
+          <div class="itemTop">
+            <p class="itemName">[Team / Club / Role]</p>
+            <span class="chip">School</span>
+          </div>
+          <p class="itemDetails">Short 1-line description</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Email: slieberman@browning.edu</span>
+      <p>Phone: +1 (917) 992-5579</p>
+    </footer>
+  </main>
+</body>
+</html>
